@@ -1,0 +1,98 @@
+// Bulma Overrides
+
+.hero-image {
+
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, calc(100% / 3));
+    transform: rotateX(-29deg) rotateZ(15deg) translateZ(1rem);
+    animation: hero-image-in 1.5s, hero-image-bounce 6s linear 1.5s infinite;
+    border-radius: $radius;
+
+
+    & img {
+        border-radius: $radius;
+    }
+
+}
+
+.navbar-menu.columns {
+    
+    margin-top: 0;
+    margin-bottom: 0;
+
+    & .navbar-start {
+        width: 100%;
+    }
+
+}
+
+@media screen and (max-width: calc(#{$navbar-breakpoint} - 1px)) {
+
+    .navbar.is-spaced + #content {
+        margin-top: 3.25rem;
+
+        .hero.hero.is-fullheight-with-navbar {
+            min-height: calc(100vh - 3.25rem);
+        }
+
+    }
+
+}
+
+@media screen and (min-width: $navbar-breakpoint) {
+
+    .navbar + #content {
+        margin-top: 5.75rem;
+
+        .hero.is-fullheight-with-navbar {
+            min-height: calc(100vh - 5.75rem);
+        }
+
+    }
+    
+}
+
+@keyframes hero-image-in {
+    0%  {
+        opacity: 0;
+        transform: rotateX(0) rotateZ(0) translateZ(6rem);
+    }
+    25% {
+        opacity: 0;
+        transform: rotateX(0) rotateZ(0) translateZ(6rem);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateX(-29deg) rotateZ(15deg) translateZ(1rem);
+    }
+}
+
+@keyframes hero-image-bounce {
+    0% {
+        transform: rotateX(-29deg) rotateZ(15deg) translateZ(1rem);
+    }
+    50% {
+        transform: rotateX(-29deg) rotateZ(15deg) translateZ(-1rem);
+    }
+    100% {
+        transform: rotateX(-29deg) rotateZ(15deg) translateZ(1rem);
+    }
+}
+
+.input, .select select, .textarea {
+    background-color: $dark;
+    border: 3.5px solid $black;
+    border-radius: 6px;
+    color: white;
+    // font-weight: bold;
+    
+    &::placeholder {
+        color: rgba(255, 255, 255, calc(1/3));
+        // font-weight: bold;
+        // text-shadow: 0px 0px 6px rgba(0, 0, 0, calc(1/3));
+    }
+
+}
+
+.label {
+    color: white;
+}
